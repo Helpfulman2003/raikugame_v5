@@ -7,7 +7,6 @@ export const GameCanvas: React.FC = () => {
     
     const [score, setScore] = useState(0);
     const [level, setLevel] = useState(0);
-    const [birdsLeft, setBirdsLeft] = useState(0);
     const [gameState, setGameState] = useState<'start' | 'playing' | 'win_level' | 'win_game' | 'loss'>('start');
 
     useEffect(() => {
@@ -28,9 +27,7 @@ export const GameCanvas: React.FC = () => {
                     setGameState('loss');
                 }
             },
-            onBirdConsumed: (left) => {
-                 setBirdsLeft(left);
-            }
+            onBirdConsumed: () => {}
         });
 
         return () => {
@@ -70,9 +67,6 @@ export const GameCanvas: React.FC = () => {
                     <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', pointerEvents: 'auto' }}>
                         <div className="score-panel">
                             LEVEL: {level + 1}
-                        </div>
-                        <div className="score-panel">
-                            raiku: {birdsLeft}
                         </div>
                         <div className="score-panel">
                             SCORE: {score.toString().padStart(5, '0')}
