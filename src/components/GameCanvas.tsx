@@ -72,7 +72,7 @@ export const GameCanvas: React.FC = () => {
                             LEVEL: {level + 1}
                         </div>
                         <div className="score-panel">
-                            RAIKU: {birdsLeft}
+                            raiku
                         </div>
                         <div className="score-panel">
                             SCORE: {score.toString().padStart(5, '0')}
