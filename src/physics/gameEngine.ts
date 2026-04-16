@@ -102,7 +102,7 @@ export class GameEngine {
   score = 0;
   currentLevelIndex = 0;
   birdsLeft = 3;
-  levelTimer: NodeJS.Timeout | null = null;
+  levelTimer: ReturnType<typeof setTimeout> | null = null;
   raikuImage: HTMLImageElement;
   
   constructor(options: GameEngineOptions) {
